@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #0E1219;
+  color: #EDEFF3;
+  font-family: "Space Grotesk", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #E3A857;
+  color: #0E1219;
+}
+
+/* subtle blueprint grid backdrop */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #4FB8A6;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* thin scrollbar to match the system feel */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0E1219; }
+::-webkit-scrollbar-thumb { background: #293241; border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: #3a4557; }
